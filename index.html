@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Document</title>
+    <title>Weather App</title>
 </head>
 
 <body>
     <main class="card">
+
         <form class="search">
-            <input type="text" id="cityInput" placeholder="enter city name" spellcheck="false">
+            <input type="text" id="cityInput" placeholder="enter city name" spellcheck="false" autocomplete="off">
             <button type="submit">
                 <img src="assets/images/search.png">
             </button>
+            <button type="button" class="theme-toggle" id="themeToggle">🌙</button>
+            <ul class="suggestions"></ul>
         </form>
 
         <p class="error">City not found</p>
