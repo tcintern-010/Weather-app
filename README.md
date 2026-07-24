@@ -70,11 +70,3 @@ WeatherApp/
    - Key: `OPENWEATHER_API_KEY`
    - Value: your OpenWeatherMap API key
 3. Deploy. The `/api/weather` and `/api/geocode` serverless functions will use this key automatically — it's never sent to the browser.
-
-## How It Works
-
-- Typing in the search box triggers a debounced (400ms) call to `/api/geocode`, which forwards the request to OpenWeatherMap's geocoding API server-side and returns up to 5 matching city suggestions.
-- Selecting a suggestion (or submitting the form) fetches current weather via `/api/weather`, using a cached result if available and still fresh (within 10 minutes).
-- The selected city is saved to `localStorage` and automatically reloaded on the next visit.
-- The dark mode toggle switches a `data-theme="dark"` attribute on `<html>`, which CSS rules key off of; the preference is saved to `localStorage`.
-- The API key lives only in Vercel's environment variables and is used exclusively inside the `/api` serverless functions — it never appears in any file served to the browser.
