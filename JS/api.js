@@ -1,8 +1,6 @@
-import { apiKey } from "./config.js";
-
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiUrl = "/api/weather?city=";
 
 export async function fetchWeather(city) {
-    const response = await fetch(apiUrl + encodeURIComponent(city) + `&appid=${apiKey}`);
+    const response = await fetch(apiUrl + encodeURIComponent(city));
     return response.json();
 }
